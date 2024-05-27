@@ -1,10 +1,10 @@
-package com.totvs.challange;
+package com.totvs.challenge;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ChallangeApplicationTests {
+class ChallengeApplicationTests {
 
 	@Test
 	void contextLoads() {

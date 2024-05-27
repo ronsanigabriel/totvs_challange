@@ -1,13 +1,13 @@
-package com.totvs.challange;
+package com.totvs.challenge;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ChallangeApplication {
+public class ChallengeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ChallangeApplication.class, args);
+		SpringApplication.run(ChallengeApplication.class, args);
 	}
 
 }
