@@ -2,16 +2,14 @@ package com.totvs.challenge.domain.payment;
 
 import com.totvs.challenge.domain.user.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Table(name = "payments")
 @Entity(name = "payments")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -25,11 +23,15 @@ public class Payment {
     private User user;
     private String description;
     private BigDecimal price;
-    private String status;
+    private String duedate;
+    private String finishdate;
+    private PaymentStatus status;
 
     public Payment(PaymentRequestDTO paymentRequestDTO) {
         this.price = paymentRequestDTO.price();
         this.description = paymentRequestDTO.description();
+        this.duedate = paymentRequestDTO.duedate();
+        this.finishdate = paymentRequestDTO.finishdate();
         this.status = paymentRequestDTO.status();
         this.user = paymentRequestDTO.user();
     }

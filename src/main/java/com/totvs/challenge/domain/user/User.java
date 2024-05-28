@@ -22,13 +22,11 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    private String username;
     private String login;
     private String password;
     private UserRole role;
 
-    public User(String username, String login, String password, UserRole role) {
-        this.username = username;
+    public User(String login, String password, UserRole role) {
         this.login = login;
         this.password = password;
         this.role = role;
@@ -39,6 +37,9 @@ public class User implements UserDetails {
         if(this.role == UserRole.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
         else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
+
+    @Override
+    public String getUsername() { return ""; }
 
     @Override
     public boolean isAccountNonExpired() {

@@ -1,0 +1,8 @@
+login,description,price,dueDate,finishDate,status
+gabriel,Água,100.00,2024-06-15,,PENDENTE
+gabriel,Luz,50.78,2024-06-15,,PENDENTE
+gabriel,Internet,89.90,2024-06-15,,PENDENTE
+common,Água,109.90,2024-06-15,,PENDENTE
+common,Luz,89.90,2024-06-15,20/05/2024,PAGO
+common,Internet,100.90,2024-06-15,2024-05-20,PAGO
+adm,Internet,199.90,2024-06-15,,ATRASO

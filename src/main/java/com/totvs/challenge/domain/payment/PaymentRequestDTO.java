@@ -7,13 +7,11 @@ import jakarta.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 public record PaymentRequestDTO(
-        @NotNull
-        User user,
-        @NotBlank
-        String description,
-        @NotNull
-        BigDecimal price,
-        @NotNull
-        String status
+        @NotNull User user,
+        @NotBlank String description,
+        @NotNull BigDecimal price,
+        @NotNull PaymentStatus status,
+        @NotNull String duedate,
+        String finishdate
 ) {
 }

@@ -36,9 +36,10 @@ public class SecurityConfigurations {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/auth/register").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.POST, "/payment/*").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.POST, "/user/*").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/payment/allBills").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/payment/getMyBills").permitAll()
+                        .requestMatchers(HttpMethod.PUT, "/payment/payBill").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/payment/registerNewBill").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
